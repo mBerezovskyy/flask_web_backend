@@ -2,9 +2,12 @@ import json
 
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
+from flask_cors import CORS
 
 app = Flask(__name__)
 mysql = MySQL(app)
+CORS(app)
+
 
 with open('credentials.json') as credentials:
     credentials_data = json.load(credentials)
